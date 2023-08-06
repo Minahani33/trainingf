@@ -1,0 +1,29 @@
+// select all companies which trains students according to department //
+
+SELECT s.STUD_ID , s.stud_name, s.DEPARTMENT, s.GRADE, c.COMP_NAME
+FROM Organization c
+INNER JOIN Student s
+ON c.comp_id = s.comp_id
+WHERE s.grade = '4th' AND s.department = 'Electrical';
+
+
+// insert new company//
+
+INSERT INTO Organization(comp_name, Specialization, e_mail, capacity, training_period, telephone, supervisor, trust_level, address)
+VALUES ('El-Sweedy', 'Electrical', 'Sweedy@gmail.com', 70, 30, 01025563824, 'Eng/Mazen', 1, 'Nasr City - Cairo');
+
+
+// select students in specific grades, and display the companies they are trained in//
+
+SELECT s.STUD_ID , s.stud_name, s.DEPARTMENT, s.GRADE, c.COMP_NAME
+FROM Organization c
+INNER JOIN Student s
+ON c.comp_id = s.comp_id
+WHERE s.grade = '4th';
+
+
+// select all data for specific company  and order them by comp_id // 
+ SELECT *
+ FROM Organization
+ where comp_name = "Orascom"
+ ORDER BY comp_id;
